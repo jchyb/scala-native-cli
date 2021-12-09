@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: olafurpg/setup-scala@v13
       - name: Unit tests
-        run: SN_CLI_VERSION=${{SN}} sbt cli/test
+        run: SN_CLI_VERSION=${{matrix.SN}} sbt cli/test
         shell: bash
       - name: Intergration tests
-        run: SN_CLI_VERSION=${{SN}} sbt cliIntegration/scripted
+        run: SN_CLI_VERSION=${{matrix.SN}} sbt cliIntegration/scripted
         shell: bash
